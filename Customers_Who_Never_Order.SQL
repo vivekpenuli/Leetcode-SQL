@@ -62,3 +62,18 @@ Output:
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
+SOLUTION:
+SOLUTION 1: Using Join
+
+select c1.name as Customers   from Customers c1
+left join Orders o
+on c1.id = o.customerId
+where o.customerId is null
+
+
+Solution 2:
+select name as Customers from Customers
+where id not in (select id from orders) 
+
+
+
